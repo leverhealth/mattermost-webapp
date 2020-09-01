@@ -9,9 +9,10 @@ phases:
     commands:
       - echo Build starting $(date)
       - make package
+      - tar -xvf mattermost-webapp.tar.gz
   post_build:
     commands:
       - echo Build completed $(date)
 artifacts:
   files:
-    - client
+    - dist
