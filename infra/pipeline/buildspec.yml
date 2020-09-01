@@ -1,6 +1,12 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - apt update
+      - apt-get install make npm
   pre_build:
     commands:
       - echo Configuring Build Env $(date)
@@ -15,4 +21,4 @@ phases:
       - echo Build completed $(date)
 artifacts:
   files:
-    - dist
+    - client
