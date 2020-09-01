@@ -3,7 +3,7 @@ terraform {
 
   backend "s3" {
     bucket  = "qh-infrastructures"
-    key     = "mattermost-webapp/state/pipeline.tfstate"
+    key     = "mattermostwebapp/state/pipeline.tfstate"
     region  = "us-east-2"
     encrypt = true
   }
@@ -26,7 +26,7 @@ module "pipeline" {
   source = "git@github.com:leverhealth/lever-infra.git//modules/pipeline?ref=v0.1.7"
 
   aws_region              = "us-east-2"
-  service                 = "mattermost-webapp"
+  service                 = "mattermostwebapp"
   artifacts_bucket        = "qh-infrastructures"
   github_org              = "leverhealth"
   github_repo             = "mattermost-webapp"
