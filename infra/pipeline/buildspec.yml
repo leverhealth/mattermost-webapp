@@ -6,8 +6,13 @@ phases:
       nodejs: 10
     commands:
       - apt update -y
-      - apt-get install -y make npm libpng-dev
       - apt-get install -y
+      - echo Installing make $(date)
+      - apt-get install -y make
+      - echo Installing npm $(date)
+      - apt-get install -y npm\
+      - echo Installing libpng $(date)
+      - apt-get install -y libpng-dev
   pre_build:
     commands:
       - echo Configuring Build Env $(date)
