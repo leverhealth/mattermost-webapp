@@ -8,9 +8,9 @@ phases:
       - apt update -y
       - apt-get install -y
       - echo Installing make $(date)
-      - apt-get install -y make
+      - apt install -y build-essential
       - echo Installing npm $(date)
-      - apt-get install -y npm\
+      - apt-get install -y npm
       - echo Installing libpng $(date)
       - apt-get install -y libpng-dev
   pre_build:
