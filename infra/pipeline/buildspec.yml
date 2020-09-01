@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - apt update
-      - apt-get install make npm
+      - apt update -y
+      - apt-get install -y make npm
   pre_build:
     commands:
       - echo Configuring Build Env $(date)
