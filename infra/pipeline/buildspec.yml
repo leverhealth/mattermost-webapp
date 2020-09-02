@@ -5,13 +5,14 @@ phases:
     commands:
       - apt update -y
       - echo Installing npm and installing npm packages
-      - apt-get install -y curl libgl1-mesa-glx
+      - apt-get install -y curl libgl1-mesa-glx git
       - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - nodeversion=$(node -v)
       - npmversion=$(npm version)
       - echo "Node VERSION $nodeversion"
       - echo "NPM VERSON $npmversion"
+      - git init
   build:
     commands:
       - echo Build starting
