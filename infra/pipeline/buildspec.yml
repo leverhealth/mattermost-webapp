@@ -5,7 +5,7 @@ phases:
     commands:
       - apt update -y
       - echo Installing npm and installing npm packages $(date)
-      - apt-get install -y curl make
+      - apt-get install -y curl libgl1-mesa-glx
       - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - nodeversion=$(node -v)
