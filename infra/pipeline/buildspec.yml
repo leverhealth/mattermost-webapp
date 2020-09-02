@@ -9,8 +9,9 @@ phases:
       - apt-get install -y
       - echo Installing make $(date)
       - apt install -y build-essential
-      - echo Installing npm $(date)
+      - echo Installing npm and installing npm packages$(date)
       - apt-get install -y npm
+      - npm install -y
       - echo Installing libpng $(date)
       - apt-get install -y libpng-dev
   pre_build:
@@ -19,6 +20,7 @@ phases:
   build:
     commands:
       - echo Build starting $(date)
+      - make build
       - make package
       - tar -xvf mattermost-webapp.tar.gz
   post_build:
