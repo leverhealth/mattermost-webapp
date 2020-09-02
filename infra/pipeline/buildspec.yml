@@ -6,7 +6,8 @@ phases:
       - apt update -y
       - echo Installing npm and installing npm packages $(date)
       - apt-get install -y curl nodejs
-      - curl -L https://www.npmjs.org/install.sh | sh
+      - curl -o- -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+      - nvm install stable
       - npm install --production
   build:
     commands:
