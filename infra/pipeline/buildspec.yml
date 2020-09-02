@@ -5,13 +5,9 @@ phases:
     commands:
       - apt update -y
       - echo Installing npm and installing npm packages $(date)
-      - apt-get install -y curl nodejs make npm
-      #- curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      #- export NVM_DIR="$HOME/.nvm"
-      #- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-      #- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-      #- nvm install stable
-      - npm i -g npm
+      - apt-get install -y curl make
+      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
+      - sudo apt-get install -y nodejs
       - npm install --production
   build:
     commands:
