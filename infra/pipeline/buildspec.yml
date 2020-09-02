@@ -7,8 +7,11 @@ phases:
       - echo Installing npm and installing npm packages $(date)
       - apt-get install -y curl make
       - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
-      - echo "JS VERSION $(node -v)"
-      - echo "NPM VERSION $(npm version)"
+      - sudo apt-get install -y nodejs
+      - nodeversion=node -v
+      - npmversion=npm version
+      - echo "Node VERSION $nodeversion"
+      - echo "NPM VERSON $npmversion"
   build:
     commands:
       - echo Build starting $(date)
