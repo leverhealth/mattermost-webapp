@@ -16,8 +16,9 @@ phases:
       - echo Configuring Build Env $(date)
   build:
     commands:
+      - rm -r package-lock.json
       - echo Build starting $(date)
-      - npm build --production
+      - make build
   post_build:
     commands:
       - echo Build completed $(date)
