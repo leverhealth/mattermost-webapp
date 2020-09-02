@@ -11,7 +11,9 @@ phases:
       - apt-get install -y npm
       - npm config set strict-ssl false
       - npm install npm -g
-      - npm update -g
+      - echo js version $(node -v)
+      - echo npm version $(npm version)
+      #- npm update -g
       - npm install --production
   build:
     commands:
