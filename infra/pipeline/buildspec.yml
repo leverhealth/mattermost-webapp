@@ -6,7 +6,7 @@ phases:
       - apt update -y
       - echo Installing npm, curl, and git
       - apt-get install -y curl git
-      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
+      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       #- nodeversion=$(node -v)
       #- npmversion=$(npm version)
@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo Build starting
-      - make build
+      - make package
   post_build:
     commands:
       - echo Build completed
