@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: latest
+      nodejs: 12
     commands:
       - apt update -y
       - apt-get install -y
@@ -12,7 +12,7 @@ phases:
       - echo Installing npm and installing npm packages$(date)
       - apt-get install -y npm
       - npm config set strict-ssl false
-      #- npm install -y
+      - npm ci
       - echo Installing libpng $(date)
       - apt-get install -y libpng-dev
   pre_build:
