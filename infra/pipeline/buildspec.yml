@@ -8,7 +8,7 @@ phases:
       - apt update -y
       - echo Installing npm and installing npm packages $(date)
       - apt-get install -y curl
-      - curl http://www.npmjs.org/install.sh | sh
+      - curl -L http://www.npmjs.org/install.sh | sh
       - npm install --production
   build:
     commands:
