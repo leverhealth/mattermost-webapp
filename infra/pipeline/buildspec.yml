@@ -4,15 +4,14 @@ phases:
   install:
     commands:
       - apt update -y
-      - echo Installing npm, curl, and git
-      - apt-get install -y curl git
+      - echo Installing curl
+      - apt-get install -y curl
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
-      #- nodeversion=$(node -v)
-      #- npmversion=$(npm version)
-      #- echo "Node VERSION $nodeversion"
-      #- echo "NPM VERSON $npmversion"
-      - git init
+      - nodeversion=$(node -v)
+      - npmversion=$(npm version)
+      - echo "Node VERSION $nodeversion"
+      - echo "NPM VERSON $npmversion"
   build:
     commands:
       - echo Build starting
