@@ -14,7 +14,7 @@ phases:
       - echo "NPM VERSON $npmversion"
   build:
     commands:
-      - echo Build starting $(date)
+      - echo Build starting
       - make package
   post_build:
     commands:
