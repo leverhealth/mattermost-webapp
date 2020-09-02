@@ -16,10 +16,10 @@ phases:
   build:
     commands:
       - echo Build starting
-      - make package
+      - make build
   post_build:
     commands:
-      - echo Build completed $(date)
+      - echo Build completed
 artifacts:
   files:
     - mattermost-webapp-tar.gz
