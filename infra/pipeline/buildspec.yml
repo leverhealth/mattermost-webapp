@@ -6,13 +6,10 @@ phases:
       nodejs: 12
     commands:
       - apt update -y
-      - apt-get install -y
       - echo Installing npm and installing npm packages $(date)
-      - apt-get install -y npm nodejs
+      - apt-get install -y npm
       - npm config set strict-ssl false
-      - npm install npm -g
-      - echo "js version $(node -v)"
-      - echo "npm version $(npm version)"
+      - npm i -g npm
       - npm install --production
   build:
     commands:
