@@ -9,8 +9,6 @@ phases:
       - apt-get install -y
       - echo Installing npm and installing npm packages$(date)
       - rm -r package-lock.json
-      - apt-get install -y npm
-      - npm config set registry="http://registry.npmjs.org/"
       - npm install
   pre_build:
     commands:
