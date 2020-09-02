@@ -9,7 +9,7 @@ phases:
       - apt-get install -y
       - echo Installing npm and installing npm packages$(date)
       - apt-get install -y curl
-      - curl http://www.npmjs.org/install.sh | sh
+      - apt-get install -y build-essential
       #- npm config set registry="http://registry.npmjs.org/"
       #- npm install npm@latest -g
       - npm install --production
