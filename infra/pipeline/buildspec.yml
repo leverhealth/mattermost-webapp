@@ -10,8 +10,9 @@ phases:
       - echo Installing make $(date)
       - apt install -y build-essential
       - echo Installing npm and installing npm packages$(date)
-      - apt-get install -y npm
       - rm -r package-lock.json
+      - rm -r /node_modules
+      - apt-get install -y npm
       - npm install
   pre_build:
     commands:
