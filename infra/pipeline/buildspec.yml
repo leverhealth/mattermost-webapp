@@ -6,7 +6,7 @@ phases:
       - apt update -y
       - echo Installing curl
       - apt-get install -y curl
-      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
+      - curl -sL https://deb.nodesource.com/setup_10.22 | sudo -E bash
       - sudo apt-get install -y nodejs
       - nodeversion=$(node -v)
       - npmversion=$(npm version)
