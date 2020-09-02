@@ -12,7 +12,7 @@ phases:
       - echo Installing npm and installing npm packages$(date)
       - apt-get install -y npm
       - npm config set strict-ssl false
-      - npm install -y
+      #- npm install -y
       - echo Installing libpng $(date)
       - apt-get install -y libpng-dev
   pre_build:
@@ -22,7 +22,6 @@ phases:
     commands:
       - echo Build starting $(date)
       - make build
-      - tar -xvf mattermost-webapp.tar.gz
   post_build:
     commands:
       - echo Build completed $(date)
