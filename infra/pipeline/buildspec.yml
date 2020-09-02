@@ -9,12 +9,10 @@ phases:
       - apt-get install -y
       - echo Installing npm and installing npm packages$(date)
       - apt-get install -y npm
+      - npm config set strict-ssl false
       - npm install npm -g --ca=""
       - npm update
       - npm install --production
-  pre_build:
-    commands:
-      - echo Configuring Build Env $(date)
   build:
     commands:
       - echo Build starting $(date)
