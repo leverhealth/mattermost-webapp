@@ -9,8 +9,8 @@ phases:
       - apt-get install -y
       - echo Installing npm and installing npm packages$(date)
       - apt-get install -y npm
-      - npm install npm@latest -g
       - npm config set registry="http://registry.npmjs.org/"
+      - npm install npm@latest -g
       - npm install --production
   pre_build:
     commands:
