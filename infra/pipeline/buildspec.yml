@@ -2,13 +2,11 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 12
     commands:
       - apt update -y
       - echo Installing npm and installing npm packages $(date)
-      - apt-get install -y curl
-      - curl -L http://www.npmjs.org/install.sh | sh
+      - apt-get install -y curl nodejs
+      - curl -L https://www.npmjs.org/install.sh | sh
       - npm install --production
   build:
     commands:
