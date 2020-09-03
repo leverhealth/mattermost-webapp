@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing curl and nodejs
-      - apt-get install -y curl
+      - apt-get install -y curl libglu1
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm cache clean -f
@@ -21,6 +21,7 @@ phases:
       - npm cache verify
       - npm install --production
       - npm install cross-env
+      - npm install -g node-pre-gyp
       - npm run build
   post_build:
     commands:
