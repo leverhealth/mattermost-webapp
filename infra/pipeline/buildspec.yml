@@ -20,6 +20,7 @@ phases:
       - echo Build starting npm install
       - npm cache verify
       - npm install --production
+      - npm install cross-env
       - npm run build
   post_build:
     commands:
