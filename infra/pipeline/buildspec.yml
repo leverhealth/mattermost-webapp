@@ -19,10 +19,11 @@ phases:
     commands:
       - echo Build starting npm install
       - npm cache verify
-      - make package
+      - npm install --production
+      - npm run build
   post_build:
     commands:
       - echo Build completed
 artifacts:
   files:
-    - mattermost-webapp-tar.gz
+    - dist
