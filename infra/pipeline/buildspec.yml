@@ -23,7 +23,9 @@ phases:
       #- npm install cross-env
       #- npm run build
       - make clean
-      - make package
+      - npm install --production
+      - npm audit fix
+      - npm build
   post_build:
     commands:
       - echo Build completed
