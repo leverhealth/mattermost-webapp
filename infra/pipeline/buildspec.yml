@@ -19,7 +19,7 @@ phases:
     commands:
       - echo Build starting npm install
       - npm cache clean --force
-      - rm -r node_modules
+      - rm -r /node_modules
       - rm -r package-lock.json
       - make package
   post_build:
