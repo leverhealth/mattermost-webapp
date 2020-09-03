@@ -21,7 +21,7 @@ phases:
       - npm cache verify
       - npm install --unsafe-perm --production
       - npm install cross-env
-      - CI=false npm run build
+      - npm run build
   post_build:
     commands:
       - echo Build completed
