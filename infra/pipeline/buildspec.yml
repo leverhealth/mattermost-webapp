@@ -17,8 +17,10 @@ phases:
       - echo "NPM VERSON $npmversion"
   build:
     commands:
-      - echo Build starting
-      - make package
+      - echo Build starting npm install
+      - npm install
+      - echo npm build
+      - npm run build
   post_build:
     commands:
       - echo Build completed
