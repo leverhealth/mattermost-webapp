@@ -17,13 +17,13 @@ phases:
       - echo "NPM VERSON $npmversion"
   build:
     commands:
-      - echo Build starting npm install
+      - echo Build starting build
       #- npm cache verify
       #- npm install --production
       #- npm install cross-env
       #- npm run build
       - make clean
-      - npm install --production
+      - npm install
       - npm audit fix
       - make package-ci
   post_build:
