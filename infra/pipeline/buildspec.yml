@@ -30,5 +30,6 @@ phases:
     commands:
       - echo Build completed
 artifacts:
-  files:
-    - mattermost-webapp-tar.gz
+  base-directory:
+    - dist
+
