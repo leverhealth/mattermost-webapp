@@ -11,10 +11,10 @@ phases:
       - npm install -g n
       - n 10.22.0
       - apt update -y
-      - nodeversion=$(node -v)
-      - npmversion=$(npm version)
-      - echo "Node VERSION $nodeversion"
-      - echo "NPM VERSON $npmversion"
+      - #nodeversion=$(node -v)
+      - #npmversion=$(npm version)
+      - #echo "Node VERSION $nodeversion"
+      - #echo "NPM VERSON $npmversion"
   build:
     commands:
       - echo Build starting build
