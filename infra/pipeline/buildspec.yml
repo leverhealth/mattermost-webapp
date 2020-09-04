@@ -30,6 +30,6 @@ phases:
     commands:
       - echo Build completed
 artifacts:
-  base-directory:
-    - dist
-
+  type: zip
+  files:
+    - ./dist/*
