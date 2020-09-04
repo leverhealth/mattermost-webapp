@@ -23,17 +23,12 @@ phases:
       #- npm install cross-env
       #- npm run build
       - make clean
-      - npm install --production
+      - npm install
       - npm audit fix
-      - npm build
+      - make package-ci
   post_build:
     commands:
       - echo Build completed
-      - mkdir tmp
-      - mv dist tmp/client
-      - tar -C tmp -czf mattermost-webapp.tar.gz client
-      - mv tmp/client dist
-      - rmdir tmp
 artifacts:
   type: zip
   files:
