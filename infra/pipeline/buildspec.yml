@@ -23,7 +23,7 @@ phases:
       #- npm install cross-env
       #- npm run build
       - make clean
-      - npm install
+      - npm install --production
       - npm audit fix
       - make package-ci
   post_build:
