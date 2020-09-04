@@ -30,6 +30,5 @@ phases:
     commands:
       - echo Build completed
 artifacts:
-  type: zip
   files:
     - mattermost-webapp.tar.gz
