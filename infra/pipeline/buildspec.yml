@@ -8,8 +8,9 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm install -g n
-      - sudo npm install cwebp-bin cwebapp
       - sudo n 10.22.0
+      - npm config set registry http://registry.npmjs.org
+      - sudo npm install cwebp-bin cwebapp
       - sudo apt update -y
       - #nodeversion=$(node -v)
       - #npmversion=$(npm version)
