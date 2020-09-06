@@ -8,7 +8,7 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm cache clean -f
-      - npm install -g n
+      - npm install -g n cwebp
       - n 10.22.0
       - apt update -y
       - #nodeversion=$(node -v)
