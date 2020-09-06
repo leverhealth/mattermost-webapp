@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing curl and nodejs
-      - apt-get install -y curl make
+      - apt-get install -y curl libglu1
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm install -g n
@@ -12,6 +12,9 @@ phases:
       - npm config set registry http://registry.npmjs.org
       - sudo npm install cwebp-bin cwebp
       - sudo apt update -y
+      - cd ..
+      - git clone https://github.com/mattermost/mattermost-server.git
+      - git clone https://github.com/mattermost/mattermost-redux.git
       - #nodeversion=$(node -v)
       - #npmversion=$(npm version)
       - #echo "Node VERSION $nodeversion"
@@ -23,9 +26,9 @@ phases:
       #- npm install --production
       #- npm install cross-env
       #- npm run build
+      - cd mattermost-redux
+      - npm run dev
       - cd ..
-      - git clone https://github.com/mattermost/mattermost-server.git
-      - git clone https://github.com/mattermost/mattermost-redux.git
       - cd src
       - make package
   post_build:
