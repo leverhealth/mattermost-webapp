@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing curl and nodejs
-      - apt-get install -y curl
+      - apt-get install -y curl make
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm cache clean -f
@@ -24,7 +24,9 @@ phases:
       #- npm run build
       - cd ..
       - git clone https://github.com/mattermost/mattermost-server.git
-      - cd $CODEBUILD_SRC_DIR_source1
+      - list=$(ls)
+      - echo "$list"
+      - cd "$CODEBUILD_SRC_DIR_source1"
       - make package
   post_build:
     commands:
