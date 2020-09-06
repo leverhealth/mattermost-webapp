@@ -27,6 +27,7 @@ phases:
       #- npm install cross-env
       #- npm run build
       - cd mattermost-redux
+      - npm run build
       - npm run dev
       - cd ..
       - cd src
