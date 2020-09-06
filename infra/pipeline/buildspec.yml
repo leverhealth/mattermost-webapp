@@ -24,9 +24,7 @@ phases:
       #- npm run build
       - cd ..
       - git clone https://github.com/mattermost/mattermost-server.git
-      - list=$(ls)
-      - echo "$list"
-      - cd "$CODEBUILD_SRC_DIR_source1"
+      - cd src
       - make package
   post_build:
     commands:
