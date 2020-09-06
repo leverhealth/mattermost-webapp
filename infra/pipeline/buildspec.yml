@@ -10,7 +10,7 @@ phases:
       - npm install -g n
       - sudo n 10.22.0
       - npm config set registry http://registry.npmjs.org
-      - sudo npm install cwebp-bin cwebp
+      - sudo npm install cwebp-bin cwebp imagemin-webp
       - sudo apt update -y
       - git clone https://github.com/mattermost/mattermost-redux.git
       - #nodeversion=$(node -v)
