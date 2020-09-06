@@ -12,6 +12,9 @@ phases:
       - npm config set registry http://registry.npmjs.org
       - sudo npm install cwebp-bin cwebp imagemin-webp
       - sudo apt update -y
+      - cd ..
+      - git clone https://github.com/mattermost/mattermost-server.git
+      - cd src
       - git clone https://github.com/mattermost/mattermost-redux.git
       - #nodeversion=$(node -v)
       - #npmversion=$(npm version)
