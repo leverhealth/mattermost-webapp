@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing curl and nodejs
-      - apt-get install -y curl
+      - apt-get install -y curl libglu1-mesa:i386
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
       - npm install -g n
@@ -24,8 +24,6 @@ phases:
       #- npm install --production
       #- npm install cross-env
       #- npm run build
-      - cd mattermost-redux
-      - npm run build
       - cd ..
       - make package
   post_build:
