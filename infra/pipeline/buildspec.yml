@@ -24,7 +24,7 @@ phases:
       #- npm run build
       - cd ..
       - git clone https://github.com/mattermost/mattermost-server.git
-      - cd mattermost-webapp
+      - cd $CODEBUILD_SRC_DIR_source1
       - make package
   post_build:
     commands:
