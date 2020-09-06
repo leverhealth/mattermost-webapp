@@ -22,10 +22,10 @@ phases:
       #- npm install --production
       #- npm install cross-env
       #- npm run build
-      - make clean
-      - npm install
-      - npm audit fix
-      - make package-ci
+      - cd ..
+      - git clone https://github.com/mattermost/mattermost-server.git
+      - cd mattermost-webapp
+      - make package
   post_build:
     commands:
       - echo Build completed
