@@ -7,9 +7,9 @@ phases:
       - apt-get install -y curl make
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
-      - npm install -g n cwebp cwebp-bin
-      - n 10.22.0
-      - apt update -y
+      - sudo npm install -g n cwebp cwebp-bin
+      - sudo n 10.22.0
+      - sudo apt update -y
       - #nodeversion=$(node -v)
       - #npmversion=$(npm version)
       - #echo "Node VERSION $nodeversion"
