@@ -24,7 +24,6 @@ phases:
       #- npm install --production
       #- npm install cross-env
       #- npm run build
-      - cd ..
       - make package
   post_build:
     commands:
