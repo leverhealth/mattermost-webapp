@@ -18,6 +18,9 @@ phases:
       - list=$(ls)
       - echo "redux $list"
       - make bundle
+      - list=$(ls)
+      - echo "list $list"
+      - cd ..
   build:
     commands:
       - echo Build starting build
