@@ -15,6 +15,9 @@ phases:
       - git clone https://github.com/mattermost/mattermost-redux.git
       - list=$(ls)
       - echo "list $list"
+      - cd mattermost-redux/
+      - list=$(ls)
+      - echo "redux $list"
   build:
     commands:
       - echo Build starting build
