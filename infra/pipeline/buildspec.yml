@@ -16,17 +16,9 @@ phases:
       - git clone https://github.com/mattermost/mattermost-server.git
       - cd src
       - git clone https://github.com/mattermost/mattermost-redux.git
-      - #nodeversion=$(node -v)
-      - #npmversion=$(npm version)
-      - #echo "Node VERSION $nodeversion"
-      - #echo "NPM VERSON $npmversion"
   build:
     commands:
       - echo Build starting build
-      #- npm cache verify
-      #- npm install --production
-      #- npm install cross-env
-      #- npm run build
       - make package
   post_build:
     commands:
