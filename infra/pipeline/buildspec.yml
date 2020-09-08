@@ -7,19 +7,12 @@ phases:
       - apt-get install -y curl
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
-      - npm install -g n
+      - sudo npm install -g n
       - sudo n 10.22.0
-      - sudo npm install cwebp-bin cwebp imagemin-webp
       - sudo apt update -y
       - git clone https://github.com/mattermost/mattermost-redux.git
-      - list=$(ls)
-      - echo "list $list"
       - cd mattermost-redux/
-      - list=$(ls)
-      - echo "redux $list"
       - make bundle
-      - list=$(ls)
-      - echo "list $list"
       - cd ..
   build:
     commands:
@@ -28,6 +21,12 @@ phases:
   post_build:
     commands:
       - echo Build completed
+      #- echo uploading to staging ec2 instance
+      #- scp mattermost-webapp.tar.gz mattermost/ec2
+      #- ssh -i insert info here ec2 instance mattermost@
+      #- cp mattermost-webapp.tar.gz
+      #- cd /opt/mattermost
+      #- tar -xvf --override mattermost-webapp.tar.gz
 artifacts:
   files:
     - mattermost-webapp.tar.gz
