@@ -22,6 +22,7 @@ phases:
       #- ssh mattermost@ec2-instance
       #- cd/opt/mattermost
       #- rm -r client
-      #- tar -xvf mattermost-webapp.tar.gz
+      #- tar -xvf --override mattermost-webapp.tar.gz
 artifacts:
-  files: mattermost-webapp-tar.gz
+  files:
+    - mattermost-webapp-tar.gz
