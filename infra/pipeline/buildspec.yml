@@ -7,9 +7,6 @@ phases:
       - apt-get install -y curl
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
       - sudo apt-get install -y nodejs
-      - sudo npm install -g n
-      - sudo n 10.22.0
-      - sudo apt update -y
       - git clone https://github.com/mattermost/mattermost-redux.git
       - cd mattermost-redux/
       - make bundle
@@ -21,8 +18,6 @@ phases:
   post_build:
     commands:
       - echo Build completed, starting packaging
-      - mkdir client
-      - cp -R dist/ client/
       #- echo uploading to staging ec2 instance
       #- scp -R client mattermost@EC2-instance:/opt/mattermost/client
 artifacts:
