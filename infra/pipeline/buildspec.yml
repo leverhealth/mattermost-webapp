@@ -17,9 +17,10 @@ phases:
       - make build
   post_build:
     commands:
-      - echo Build completed, starting packaging
+      - echo Build completed, starting upload
       #- echo uploading to staging ec2 instance
       #- scp -R client mattermost@EC2-instance:/opt/mattermost/client
 artifacts:
   files:
-    - client
+    - '**/*'
+  base-directory: 'client'
