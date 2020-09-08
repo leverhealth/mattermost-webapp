@@ -17,16 +17,14 @@ phases:
   build:
     commands:
       - echo Build starting build
-      - make package
+      - make build
   post_build:
     commands:
-      - echo Build completed
+      - echo Build completed, starting packaging
+      - mkdir client
+      - cp -R dist/ client/
       #- echo uploading to staging ec2 instance
-      #- scp mattermost-webapp.tar.gz mattermost/ec2
-      #- ssh -i insert info here ec2 instance mattermost@
-      #- cp mattermost-webapp.tar.gz
-      #- cd /opt/mattermost
-      #- tar -xvf --override mattermost-webapp.tar.gz
+      #- scp -R client mattermost@EC2-instance:/opt/mattermost/client
 artifacts:
   files:
-    - mattermost-webapp.tar.gz
+    - client
