@@ -2,25 +2,25 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 10
     commands:
-      - echo Installing curl and nodejs
-      - apt-get install -y curl
-      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
-      - sudo apt-get install -y nodejs
-      - git clone https://github.com/mattermost/mattermost-redux.git
+      - echo Installing mattermost-redux
       - cd mattermost-redux/
       - make bundle
       - cd ..
   build:
     commands:
       - echo Build starting build
-      - make build
+      - make package
   post_build:
     commands:
       - echo Build completed, starting upload
       #- echo uploading to staging ec2 instance
-      #- scp -R client mattermost@EC2-instance:/opt/mattermost/client
+      #- scp mattermost-webapp-tar.gz mattermost@EC2-instance:/opt/mattermost
+      #- ssh mattermost@ec2-instance
+      #- cd/opt/mattermost
+      #- rm -r client
+      #- tar -xvf mattermost-webapp.tar.gz
 artifacts:
-  files:
-    - '**/*'
-  base-directory: 'client'
+  files: mattermost-webapp-tar.gz
