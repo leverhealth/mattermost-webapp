@@ -5,7 +5,8 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - echo Installing mattermost-redux
+      - echo CLoneing mattermost redux
+      - git clone https://github.com/mattermost/mattermost-redux.git
       - cd mattermost-redux/
       - make bundle
       - cd ..
