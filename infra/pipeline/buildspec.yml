@@ -25,4 +25,4 @@ phases:
       #- tar -xvf mattermost-webapp.tar.gz
 artifacts:
   files:
-    - mattermost-webapp-tar.gz
+    - mattermost-webapp.tar.gz
