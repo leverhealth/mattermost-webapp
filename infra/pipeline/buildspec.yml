@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo Build starting $(date)
-      - docker build -f app/Dockerfile -t $REPO_URI:latest .
+      - docker build -f $REPO_URI:latest -t $REPO_URI:latest .
       - docker tag $REPO_URI:latest $REPO_URI:$IMAGE_TAG
   post_build:
     commands:
