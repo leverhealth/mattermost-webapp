@@ -1,28 +1,26 @@
 version: 0.2
 
 phases:
-  install:
+  pre_build:
     commands:
-      - echo Installing curl and nodejs
-      - apt-get install -y curl
-      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
-      - apt-get install -y nodejs
-      - git clone https://github.com/mattermost/mattermost-redux.git
-      - cd mattermost-redux/
-      - make bundle
-      - cd ..
+      - echo Configuring Build Env $(date)
+      - aws --version
+      - $(aws ecr get-login --region $AWS_REGION --no-include-email)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-8)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
-      - echo Build starting build
-      - make package
+      - echo Build starting $(date)
+      - docker build -f app/Dockerfile -t $REPO_URI:latest .
+      - docker tag $REPO_URI:latest $REPO_URI:$IMAGE_TAG
   post_build:
     commands:
-      - echo Build completed, starting upload
-      #- scp -i .pemfileHere mattermost-webapp-tar.gz mattermost@$EC2_PRIVATE:/opt/mattermost
-      #- ssh -i .pemfileHere mattermost@ec2-instance
-      #- cd/opt/mattermost
-      #- rm -r client
-      #- tar -xvf mattermost-webapp.tar.gz
+      - echo Build completed $(date)
+      - echo Pushing images
+      - docker push $REPO_URI:latest
+      - docker push $REPO_URI:$IMAGE_TAG
+      - echo Writing image definitions file
+      - printf '[{"name":"%s","imageUri":"%s"}]' $IMAGE_NAME $REPO_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files:
-    - mattermost-webapp-tar.gz
+    - imagedefinitions.json

@@ -29,7 +29,7 @@ module "pipeline" {
   service                 = "mattermostwebapp"
   artifacts_bucket        = "qh-infrastructures"
   github_org              = "leverhealth"
-  github_repo             = "mattermost-webapp"
+  github_repo             = "app-chat"
   github_repo_description = "Implements the users API"
   github_token            = var.github_token
   github_secret           = var.github_secret
@@ -41,8 +41,4 @@ output "ecr_repo" {
 
 output "github_repo" {
   value = module.pipeline.github_repo.html_url
-}
-
-output "ec2_private_ip" {
-  value = module.svc-instance.ec2_private_ip
 }
