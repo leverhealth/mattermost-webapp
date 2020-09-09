@@ -42,3 +42,7 @@ output "ecr_repo" {
 output "github_repo" {
   value = module.pipeline.github_repo.html_url
 }
+
+output "ec2_private_ip" {
+  value = module.svc-instance.ec2_private_ip
+}
