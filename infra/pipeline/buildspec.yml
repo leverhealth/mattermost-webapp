@@ -18,11 +18,11 @@ phases:
   post_build:
     commands:
       - echo Build completed, starting upload
-      #- scp mattermost-webapp-tar.gz mattermost@EC2-instance:/opt/mattermost
-      #- ssh mattermost@ec2-instance
+      #- scp -i .pemfileHere mattermost-webapp-tar.gz mattermost@$EC2_PRIVATE:/opt/mattermost
+      #- ssh -i .pemfileHere mattermost@ec2-instance
       #- cd/opt/mattermost
       #- rm -r client
-      #- tar -xvf --override mattermost-webapp.tar.gz
+      #- tar -xvf mattermost-webapp.tar.gz
 artifacts:
   files:
     - mattermost-webapp-tar.gz
