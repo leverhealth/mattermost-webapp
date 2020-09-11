@@ -1,7 +1,7 @@
 .PHONY: build test run clean stop check-style fix-style run-unit emojis help package-ci storybook build-storybook update-dependencies
 
 BUILD_SERVER_DIR = ../mattermost
-BUILD_WEBAPP_DIR = ../src
+BUILD_WEBAPP_DIR = ../mattermost-webapp
 MM_UTILITIES_DIR = ../mattermost-utilities
 EMOJI_TOOLS_DIR = ./build/emoji
 export NODE_OPTIONS=--max-old-space-size=4096
