@@ -1647,7 +1647,7 @@ const AdminDefinition = {
                         help_text: t('admin.team.brandDescriptionHelp'),
                         help_text_default: 'Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.',
                         placeholder: t('web.root.signup_info'),
-                        placeholder_default: 'All team communication in one place, searchable and accessible anywhere, testing a change',
+                        placeholder_default: 'All team communication in one place, searchable and accessible anywhere',
                         isDisabled: it.not(it.userHasWritePermissionOnResource('site')),
                     },
                     {

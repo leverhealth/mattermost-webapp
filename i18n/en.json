@@ -4114,7 +4114,7 @@
   "web.footer.terms": "Terms",
   "web.header.back": "Back",
   "web.header.logout": "Logout",
-  "web.root.signup_info": "All team communication in one place, searchable and accessible anywhere, testing a change",
+  "web.root.signup_info": "All team communication in one place, searchable and accessible anywhere",
   "widgets.channels_input.empty": "No channels found",
   "widgets.channels_input.loading": "Loading",
   "widgets.users_emails_input.loading": "Loading",
