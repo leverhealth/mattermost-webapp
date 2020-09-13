@@ -22,8 +22,8 @@ variable "github_secret" {
 /* Deploy */
 
 module "pipeline" {
-  source = "../../../lever-infra/modules/pipeline"
-  #source = "git@github.com:leverhealth/lever-infra.git//modules/pipeline?ref=v0.1.7"
+  #source = "../../../lever-infra/modules/pipeline"
+  source = "git@github.com:leverhealth/lever-infra.git//modules/pipeline?ref=v0.1.7"
 
   aws_region              = "us-east-2"
   service                 = "mattermostwebapp"
